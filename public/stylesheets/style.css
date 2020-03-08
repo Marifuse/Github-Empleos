@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: 'Trade Winds', cursive;
+}
+
+/* Sección principal con botón que redirecciona al buscador de empleos */
+.header-title-1 {
+  margin-bottom: 1em;
+}
+
+.header-image {
+  margin-bottom: 6em;
+} 
+
+/* Sección de busqueda de empleo */
+/* Navbar */
+#navbarNav {
+  justify-content: flex-end;
+}
+
+/* Cabecera */
+.header-title {
+  text-align: center;
+  padding-top: 8em;
+  padding-bottom: 2em; 
+}
+
+/* Sección de busqueda */
+#formulario {
+  margin-bottom: 2em;
+}
+
+.main-section {
+  text-align: center;
+  padding: 1em;
+}
+
+.field{
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+
+/* Sección trabajos no disponibles */
+#lista {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+/* div con los trabajos disponibles */
+#jobsElements {
+  text-align: center;
+  margin-bottom: 10em;
+}
+
+.job-description {
+  padding: 1em;
+  border: 1px solid cadetblue;
+  margin-bottom: 1em;
+}
+
+/* Cierre */
+.footer-container {
+  text-align: center;
+}
+
+.footer-title {
+  padding-top: 0.5em;
+  color: #FFFFFF;
+}
+
+/* Media Querys Versión Movil */
+@media (min-width: 300px) and (max-width: 991px) {
+  /* Navbar */
+  .form-inline {
+    justify-content: center;
+    padding: 1em;
+  }
+  /* Título del Index */
+  .header-title-1 {
+    font-size: 1.5em;
+  }
+  /* Imagen del Index */
+  .header-image {
+    margin-bottom: 7em;
+  }
+}
