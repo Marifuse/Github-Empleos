@@ -2,16 +2,18 @@
 let form = document.getElementById("formulario");
 form.addEventListener("submit",function(event){
   event.preventDefault();
+  // Para poder borrar los contenidos de la lista, se debe colocar el vacio el la función de busqueda
+  document.getElementById("lista").innerHTML = "";
   let localizacion = document.querySelector("#localizacion").value; 
   let search = document.querySelector("#job-desc").value;
   buscarTrabajos(localizacion, search); 
 })
 
 // Función del botón para volver al index (no funciona)
-// let button = document.getElementById("back");
-// button.addEventListener("click",function(event){
-//     window.location.href = "/index"
-// });
+let button = document.getElementById("back");
+button.addEventListener("click",function(event){
+    window.location.href = "/" //No se pone index porque el archivo en sí mismo que es el index, se pone con /
+});
 
 // Función para que aparezcan los trabajos o el aviso que no hay
 async function buscarTrabajos(localizacion, search) { //Async función asincrona
@@ -25,7 +27,6 @@ async function buscarTrabajos(localizacion, search) { //Async función asincrona
        let noJobs = document.createTextNode('No hay Trabajos en este momento. Intenta más tarde');
          document.getElementById("lista").append(noJobs);
          console.log(noJobs);
-        //  Falta sacar este texto cuando se hace una nueva busqueda "noJobs.removeChild(noJobs);??"
      } else {
         jobs.forEach(job => {
         let d = document.createElement("div");
@@ -35,7 +36,6 @@ async function buscarTrabajos(localizacion, search) { //Async función asincrona
         + job.title + "<br>" + "<br>" + "Lugar del Empleo:" + "<br>" + job.location;
         
         document.getElementById("jobsElements").append(d);
-        // Lo mismo que arriba "jobs.removeChild(noJobs);"
      });
     }
   } catch (e) {
