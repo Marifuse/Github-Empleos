@@ -9,7 +9,7 @@ form.addEventListener("submit",function(event){
   buscarTrabajos(localizacion, search); 
 })
 
-// Función del botón para volver al index (no funciona)
+// Función del botón para volver al index
 let button = document.getElementById("back");
 button.addEventListener("click",function(event){
     window.location.href = "/" //No se pone index porque el archivo en sí mismo que es el index, se pone con /
@@ -17,6 +17,9 @@ button.addEventListener("click",function(event){
 
 // Función para que aparezcan los trabajos o el aviso que no hay
 async function buscarTrabajos(localizacion, search) { //Async función asincrona
+  // Estas líneas permitieron limpiar las busquedas y no se entorpeciera el asunto(JQuery)
+  $('.no-jobs').html('')
+  $('#jobsElements').html('')
   let url = 'https://corsanywhere.herokuapp.com/https://jobs.github.com/positions.json?' 
   + "location=" + localizacion + "&description=" + search;
   let resp = await axios.get(url); //await para que espere la tarea //axio es una libreria basada en promesas
